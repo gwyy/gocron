@@ -46,7 +46,7 @@ func getCommands() []cli.Command {
 	command := cli.Command{
 		Name:   "web",
 		Usage:  "run web server",
-		Action: runWeb,
+		Action: runWeb, //最终执行方法
 		Flags: []cli.Flag{
 			cli.StringFlag{
 				Name:  "host",
@@ -74,7 +74,7 @@ func runWeb(ctx *cli.Context) {
 	setEnvironment(ctx)
 	// 初始化应用
 	app.InitEnv(AppVersion)
-	// 初始化模块 DB、定时任务等
+	// 初始化模块 DB、定时任务等 如果没有安装就直接跳过
 	initModule()
 	// 捕捉信号,配置热更新等
 	go catchSignal()
@@ -89,6 +89,7 @@ func runWeb(ctx *cli.Context) {
 }
 
 func initModule() {
+	//如果没有安装直接跳过
 	if !app.Installed {
 		return
 	}

@@ -26,6 +26,9 @@ make build
 //运行
 ./bin/gocron web
 ```
+## 其他配置
+slack
+https://hooks.slack.com/services/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
 
 
 ## 运行

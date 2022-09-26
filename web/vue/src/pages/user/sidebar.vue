@@ -3,9 +3,6 @@
     <el-menu
       :default-active="currentRoute"
       mode="vertical"
-      background-color="#334157"
-      text-color="#fff"
-      active-text-color="#ffd04b"
       router>
       <el-menu-item index="/user">
         <i class="el-icon-news"></i>

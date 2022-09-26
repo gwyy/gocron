@@ -3,13 +3,11 @@
     <el-menu
       :default-active="currentRoute"
       mode="horizontal"
-      background-color="#334157"
-      text-color="#fff"
-      active-text-color="#ffd04b"
+
       router>
       <el-row>
-        <el-col style="width: 150px; text-align: center;">
-          <el-menu-item index="/task" style="font-size:16px;letter-spacing:2px;color:rgb(255, 208, 75)">
+        <el-col style="width: 240px; text-align: center;">
+          <el-menu-item index="/task" style="font-weight:600;font-size:20px;letter-spacing:2px;color:#409EFF">
           <b @click="changeLogo()">{{logos[logoIndex]}}</b>
           </el-menu-item>
         </el-col>
@@ -26,13 +24,13 @@
           </el-menu-item>
         </el-col>
         <el-col :span="2">
-          <el-menu-item v-if="this.$store.getters.user.isSuperAdmin" index="/user">
+          <el-menu-item  index="/user">
             <i class="el-icon-service"></i>
             <span slot="title">用户管理</span>
           </el-menu-item>
         </el-col>
         <el-col :span="2">
-          <el-menu-item v-if="this.$store.getters.user.isSuperAdmin" index="/system">
+          <el-menu-item  index="/system">
             <i class="el-icon-setting"></i>
             <span slot="title">系统管理</span>
           </el-menu-item>
@@ -62,7 +60,7 @@ export default {
   name: 'app-nav-menu',
   data () {
     return {
-      logos: ['🅖⚆🅒🅡🅞🅝', 'Ⓖ🅞Ⓒ🅡Ⓞ🅝', '🅖➲🅒🅡🅞🅝', '🅶OCRON'],
+      logos: ['分布式定时任务平台', '分布式定时任务平台', '分布式定时任务平台', '分布式定时任务平台'],
       logoIndex: 0
     }
   },

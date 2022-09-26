@@ -48,6 +48,7 @@ func Register(m *macaron.Macaron) {
 	// 所有GET方法，自动注册HEAD方法
 	m.SetAutoHead(true)
 	m.Get("/", func(ctx *macaron.Context) {
+		//加载vue模板
 		file, err := statikFS.Open("/index.html")
 		if err != nil {
 			logger.Error("读取首页文件失败: %s", err)
